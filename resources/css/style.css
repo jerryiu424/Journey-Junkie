@@ -66,3 +66,16 @@ body, html {
 .buttonImg:hover{
     filter: hue-rotate(350);
 }
+
+/* Explore */
+.backGround{
+    background-color: #004445;
+    height: 94.9%;
+}
+
+.formPad{
+    padding-bottom: 1vh;
+}
+.topFormPad{
+    padding-top: 1vh;
+}
