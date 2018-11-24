@@ -14,6 +14,9 @@
     filter: grayscale(75);
 }
 
+.btn-outline-success{
+    text: #6FB98F !important;
+}
 /* Landing */
 body, html {
     height: 100%;
@@ -21,8 +24,8 @@ body, html {
 
 .bg { 
     /* The image used */
-    background-image: url("https://source.unsplash.com/1920x1080/?travel,explore");
-    filter:blur(2px) grayscale(0.4);
+    background-image: url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd27a515bce2dade58bc288fde28f290&auto=format&fit=crop&w=2593&q=80");
+
     /* Full height */
     height: 94.9%; 
 
@@ -41,9 +44,25 @@ body, html {
 }
 
 .landing-search{
-    width: 30vh;
+    width: 80vh;
+    height: 5vh;
 }
 .btn-click{
     margin-top:30px;
-    scale: 3;
+    border-radius: 25px;
+    background-color: #6FB98F !important;
+}
+.form-control{
+    border-radius: 12.5px;
+    border-color: #6FB98F !important;
+}
+.buttonImg{
+    margin-top: 2vh;
+    height: 8vh;
+}
+.NavBarButtonImg{
+    height: 2.0vh;
+}
+.buttonImg:hover{
+    filter: hue-rotate(350);
 }
