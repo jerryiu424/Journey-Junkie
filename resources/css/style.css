@@ -79,3 +79,12 @@ body, html {
 .topFormPad{
     padding-top: 1vh;
 }
+.topFormPad2{
+    padding-top: 2vh;
+}
+.formPad2{
+    padding-bottom: 2vh;
+}
+.slider{
+    color: white !important;
+}

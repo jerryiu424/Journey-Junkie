@@ -14,7 +14,8 @@
 <body>
   <!-- NavBar -->
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="/index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie" class="brandImg"></a>
+    <a class="navbar-brand" href="/index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie"
+        class="brandImg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -34,77 +35,67 @@
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input id="myInput" class="form-control mr-sm-2" type="search" placeholder="I'm headed to...">
-        <button id="myBtn" class="btn btn-success btn-click my-2 my-sm-0" type="submit"><img class="NavBarButtonImg" src="resources/images/Logo Resources/NavBarSearchButton.png" alt=""></button>
+        <button id="myBtn" class="btn btn-success btn-click my-2 my-sm-0" type="submit"><img class="NavBarButtonImg"
+            src="resources/images/Logo Resources/NavBarSearchButton.png" alt=""></button>
       </form>
     </div>
   </nav>
-<!-- NavBar End -->
-<!-- Landing -->
-<div class="backGround">  </div>
-<div class="landing">
-  <div class="hero-text">
+  <!-- NavBar End -->
+  <!-- Landing -->
+  <div class="backGround"> </div>
+  <div class="landing">
+    <div class="hero-text">
       <form>
-          <div class="form-row">
+        <div class="form-row">
+          <div class="col">
+            <label for="validationDefault01" class="formPad">City</label>
+            <input name="validationDefault01" Stype="text" class="form-control formPad" id="validationDefault01" placeholder="Paris..." required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="date" class="topFormPad formPad">Start Date</label>
             <div class="col">
-              <label for="validationDefault01" class="formPad">City</label>
-              <input type="text" class="form-control formPad" id="validationDefault01" placeholder="Paris..." required>
+              <input class="form-control" type="datetime-local" value="2018-11-25T13:00" id="example-datetime-local-input" required>
             </div>
           </div>
-          <div class="form-row">
-              <div class="col">
-                  <label for="date" class="topFormPad formPad">Start Date</label>
-                  <input type="text" name="date" class="form-control formPad" id="date" placeholder="November 25, 2018" required>
-                </div>
-                <div class="col">
-                    <label for="validationDefault02" class="topFormPad formPad">End Date</label>
-                    <input type="text" class="form-control formPad" id="validationDefault02" placeholder="December 18, 2018" required>
-                  </div>
+          <div class="col">
+            <label for="validationDefault02" class="topFormPad formPad">End Date</label>
+            <div class="col">
+              <input class="form-control" type="datetime-local" value="2019-01-09T09:00" id="example-datetime-local-input" required>
+            </div>
           </div>
-          <div class="form-row">
-              <div class="col topFormPad formPad"><label >Budget</label>
-                <select class="custom-select form-control">
-                 
-                    <option selected>Open this select menu</option>
-                    <option value="0">Free</option>
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                    <option value="3">High</option>
-                    <option value="4">Very High</option>
-                  </select></div>
-                  <div class="col topFormPad formPad"><label >Interests</label>
-                    <select class="custom-select form-control">
-                     
-                        <option selected>Open this select menu</option>
-                        <option value="0">Restaurants</option>
-                        <option value="1">Entertainment</option>
-                        <option value="2">Sushi</option>
-                        <option value="3">Video Games</option>
-                        <option value="4"></option>
-                      </select></div>
-          </div>
+        </div>
 
-          <button class="btn btn-click" type="submit">Show me my itinerary!</button>
-        </form>
-</div>
-  <!-- Landing End -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+        <div class="form-row">
+          <label for="customRange3" class="topFormPad2 ">What is your budget?</label>
+<input type="range" class="slider custom-range topFormPad2 formPad2 " min="0" max="4" step="1" id="customRange3">
+        </div>
+
+        <button class="btn btn-click" type="submit">Show me my itinerary!</button>
+      </form>
+    </div>
+    <!-- Landing End -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
     <script src="resources/js/app.js"></script>
     <script>
-        $(document).ready(function(){
-            var date_input=$('input[name="date"]'); //our date input has the name "date"
-            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-            date_input.datepicker({
-                format: 'mm/dd/yyyy',
-                container: container,
-                todayHighlight: true,
-                autoclose: true,
-            })
-        })
+      var first = getUrlVars()["city"];
+      first = first.replace("+", " ");
+      $('input[name=validationDefault01]').val(first);
+      document.getElementById("test").innerHTML = first;
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+          vars[key] = value;
+        });
+        return vars;
+      }
+
     </script>
 </body>
 
