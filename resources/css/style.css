@@ -22,17 +22,18 @@ body, html {
     height: 100%;
 }
 
-.bg { 
+.bg {
     /* The image used */
     background-image: url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd27a515bce2dade58bc288fde28f290&auto=format&fit=crop&w=2593&q=80");
 
     /* Full height */
-    height: 94.9%; 
+    min-height: 100vh;
 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed, local;
 }
 .hero-text {
     text-align: center;
