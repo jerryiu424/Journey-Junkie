@@ -14,7 +14,7 @@
 <body>
   <!-- NavBar -->
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="/index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie"
+    <a class="navbar-brand" href="./index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie"
         class="brandImg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,13 +24,13 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
         <li class="nav-item">
-          <a class="nav-link" href="/explore.html">Explore Journeys</a>
+          <a class="nav-link" href="./explore.html">Explore Journeys</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/itinerary.html">Itinerary</a>
+          <a class="nav-link" href="./itinerary.html">Itinerary</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about.html">About Us</a>
+          <a class="nav-link" href="./about.html">About Us</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -45,24 +45,28 @@
   <div class="backGround"> </div>
   <div class="landing">
     <div class="hero-text">
-      <form>
+      <form action="./actions/createSchedule.php" method="POST">
         <div class="form-row">
           <div class="col">
+            <label for="validationDefault01" class="formPad">Schedule Name</label>
+            <input Stype="text" name="name" class="form-control formPad" id="validationDefault01" placeholder="JSON Derulo&apos;s World Tour" required>
+          </div>
+          <div class="col">
             <label for="validationDefault01" class="formPad">City</label>
-            <input name="validationDefault01" Stype="text" class="form-control formPad" id="validationDefault01" placeholder="Paris..." required>
+            <input Stype="text" name="city" class="form-control formPad" id="validationDefault01" value="<?php echo htmlspecialchars($_GET['city']); ?>" required>
           </div>
         </div>
         <div class="form-row">
           <div class="col">
             <label for="date" class="topFormPad formPad">Start Date</label>
             <div class="col">
-              <input class="form-control" type="datetime-local" value="2018-11-25T13:00" id="example-datetime-local-input" required>
+              <input class="form-control" type="datetime-local" name="start" value="2018-11-25T13:00" id="example-datetime-local-input" required>
             </div>
           </div>
           <div class="col">
             <label for="validationDefault02" class="topFormPad formPad">End Date</label>
             <div class="col">
-              <input class="form-control" type="datetime-local" value="2019-01-09T09:00" id="example-datetime-local-input" required>
+              <input class="form-control" type="datetime-local" name="end" value="2019-01-09T09:00" id="example-datetime-local-input" required>
             </div>
           </div>
         </div>
@@ -72,7 +76,7 @@
 <input type="range" class="slider custom-range topFormPad2 formPad2 " min="0" max="4" step="1" id="customRange3">
         </div>
 
-        <button class="btn btn-click" type="submit">Show me my itinerary!</button>
+        <input type="submit" class="btn btn-click" type="submit" value="Show me my itinerary!">
       </form>
     </div>
     <!-- Landing End -->

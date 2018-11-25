@@ -42,7 +42,7 @@ foreach($stmt as $row) {
 <body>
   <!-- NavBar -->
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="/index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie" class="brandImg"></a>
+    <a class="navbar-brand" href="./index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie" class="brandImg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -51,13 +51,13 @@ foreach($stmt as $row) {
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
         <li class="nav-item">
-          <a class="nav-link" href="/explore.html">Explore Journeys</a>
+          <a class="nav-link" href="./explore.html">Explore Journeys</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/itinerary.html">Itinerary</a>
+          <a class="nav-link" href="./itinerary.html">Itinerary</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about.html">About Us</a>
+          <a class="nav-link" href="./about.html">About Us</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

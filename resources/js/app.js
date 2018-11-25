@@ -159,5 +159,7 @@ function finalizeSelection(time, placeID, name){
         url: "./actions/storeSelection.php/?time=" + time + "&place_id=" + placeID+ "&schedule_id=" + schedule_id + "&name=" + name,
     });
 
-    location.reload();
+    setTimeout(function(){
+      location.reload();
+    }, 1000);
 }

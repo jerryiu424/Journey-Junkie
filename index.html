@@ -14,7 +14,7 @@
 <body>
   <!-- NavBar -->
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="/index.html"><img src="resources/images/Logo Resources/Logo.png" alt="Journey Junkie"
+    <a class="navbar-brand" href="./index.html"><img src="./resources/images/Logo Resources/Logo.png" alt="Journey Junkie"
         class="brandImg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +24,19 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
         <li class="nav-item">
-          <a class="nav-link" href="/explore.html">Explore Journeys</a>
+          <a class="nav-link" href="./explore.html">Explore Journeys</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/itinerary.html">Itinerary</a>
+          <a class="nav-link" href="./itinerary.html">Itinerary</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about.html">About Us</a>
+          <a class="nav-link" href="./about.html">About Us</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" action="./explore.php" method="GET">
         <input id="myInput" class="form-control mr-sm-2" type="search" placeholder="I'm headed to...">
         <button id="myBtn" class="btn btn-success btn-click my-2 my-sm-0" type="submit"><img class="NavBarButtonImg"
-            src="resources/images/Logo Resources/NavBarSearchButton.png" alt=""></button>
+            src="./resources/images/Logo Resources/NavBarSearchButton.png" alt=""></button>
       </form>
     </div>
   </nav>
@@ -45,10 +45,10 @@
   <div class="bg"> </div>
   <div class="landing">
     <div class="hero-text">
-      <form id="form-id" action="explore.html" method="GET">
+      <form id="form-id" action="./explore.php" method="GET">
         <div class="col-lg-8"><input type="city" class="form-control landing-search" name="city" id="inputCity"
             aria-describedby="emailHelp" placeholder="Choose a city, we'll do the rest."></div>
-        <a id="your-id" href="#"><img class="buttonImg" src="resources/images/Logo Resources/NavBarSearchButton2.png" alt="" srcset=""></a>
+        <a id="your-id" href="#"><img class="buttonImg" src="./resources/images/Logo Resources/NavBarSearchButton2.png" alt="" srcset=""></a>
       </form>
 
       <!-- <button type="button" class="btn btn-success btn-click" onclick="window.location.reload()"></button> -->
