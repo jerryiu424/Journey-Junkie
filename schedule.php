@@ -112,8 +112,11 @@ foreach($stmt as $row) {
 <!-- Landing -->
 <div class="bg">
   <div class="container">
-      <h2>
-        Itinerary Name
+      <h2 id="itineryName" style="color: white; text-shadow: 2px 2px #000000;">
+        <?php
+          echo $row['name'] . ' in <span id="itineraryHeader">'. $row['city'] . '</span>';
+          echo '<span style="display:none;" id="schedule_id">' . htmlspecialchars($_GET['schedule']) . '</span>';
+        ?>
       </h2>
       <div class="card">
       <ul class="list-group list-group-flush">
