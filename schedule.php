@@ -47,9 +47,9 @@ foreach($stmt as $row) {
 
 
     while ($i <= $length) {
-      $thisevent = "";
-      $thiseventFormatted = "";
-      $thisplace = "";
+      $thisevent = "NONE";
+      $thiseventFormatted = " - <i>Click to schedule event</i>";
+      $thisplace = "NONE";
       foreach($items as $event) {
 
           $newtime = $event['time'];
@@ -127,7 +127,7 @@ foreach($stmt as $row) {
 
 <!-- Modal -->
 <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document" style="max-width:1000px !important;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="event-name"></h5>
@@ -136,10 +136,6 @@ foreach($stmt as $row) {
         </button>
       </div>
       <div class="modal-body" id="event-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
