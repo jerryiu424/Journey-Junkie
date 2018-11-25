@@ -10,7 +10,9 @@ input.addEventListener("keyup", function(event) {
 function openmodal(time, desc, placeid) {
     if (desc == "NONE") {
         $('#event-name').html("Add New Event");
+        $('#event-body').html("");
 
+        populateNewEventModal(time);
     } else {
         $.ajax({
             dataType: "json",
@@ -55,8 +57,8 @@ function openmodal(time, desc, placeid) {
                 '<b>Friday    : </b>' + weekOpening[5] + '<br>' +
                 '<b>Saturday  : </b>' + weekOpening[6] + '</p>' +
                 '<p>------------------------------------------</p>' +
-                '<p><b>Price : </b>' + data.price + ' / 5</p>' +
-                '<b>photo:</b><img src="' + data.photo + '" style="width:100%"/>' +
+                '<p><b>Rating : </b>' + data.price + ' / 5</p>' +
+                '<b>Photo:</b><img src="' + data.photo + '" style="width:100%"/>' +
                 '<p><b>Website : </b><a href="' + data.website + '" target=_BLANK>' + data.website + '</a></p>'
 
             );
@@ -68,3 +70,102 @@ function openmodal(time, desc, placeid) {
     })
     $('#eventModal').modal('show')
   }
+
+
+function populateNewEventModal(time) {
+  content = "";
+  content += "<h4>Select Category</h4>";
+  options = {
+    "amusement_park": "Amusement Park",
+    "art_gallery": "Art Gallery",
+    "aquarium" : "Aquarium",
+    "bowling_alley" : "Bowling Alley",
+    "casino" : "Casino",
+    "department_store" : "Department Store",
+    "jewelry_store" : "Jewelry Store",
+    "movie_theatre" : "Movie Theatre",
+    "museum" : "Museum",
+    "night_club" : "Night Club",
+    "shopping_mall" : "Shopping Mall",
+    "stadium" : "Stadium",
+    "spa" : "Spa",
+    "park" : "Park",
+    "zoo" : "Zoo",
+    "bakery" : "Bakery",
+    "bar" : "Bar",
+    "cafe" : "Coffee Shop",
+    "liquor_store" : "Liquor Store",
+    "restaurant" : "Restaurant",
+    "supermarket" : "Supermarket",
+    "meal_takeaway" : "Take-Out"
+  }
+  content += '<select class="form-control form-control-lg" id="chosenCategory">';
+
+  for (var key in options){
+    content += '<option value=' + key + '>' + options[key] + '</option>';
+  }
+
+  content += '</select><br><br>';
+  content += '<button class="float-right btn btn-primary" onclick=populateEventListModal(' + time + ')>Next</button>';
+  $('#event-body').html(content);
+}
+
+
+function populateEventListModal(time) {
+    content = "<ul class=\"list-group\">";
+
+    var type = document.getElementById("chosenCategory").value;
+    console.log(type);
+    $('#event-body').html("");
+
+    var city = document.getElementById("itineraryHeader").innerHTML;
+    console.log(city);
+
+    $.get({
+        dataType: "json",
+        url: "https://jackbiggin.lib.id/hackwestern@dev/findNearbyLocations/?location=" + city + "&radius=4000&searchType=" + type,
+    }).done(function(data){
+      console.log(data);
+
+
+      for(var place in data)
+      {
+        console.log(data[place]);
+        content = content + "<li class=\"list-group-item\" id=\"ChoosenPlace\">" +
+                                  "<div class=\"row\">" +
+                                        "<div class=\"col-md-3\">" +
+                                            "<img src=\"" + data[place].photo + "\" style = \"width:100%\" />" +
+                                        "</div>" +
+                                        "<div class=\"col-md-9\">" +
+                                            "<b>Name    : </b>" + data[place].name + "<br>" +
+                                            "<b>Address : </b>" + data[place].address + "<br>" +
+                                            "<b>rating : </b>" + data[place].rating + " / 5 <br>" +
+                                            "<button class=\"float-right btn btn-primary\" onclick=\"finalizeSelection(" + time + ',\'' + encodeURI(data[place].place_id) + '\',\'' + encodeURI(data[place].name) + "\')\">Choose</button>" +
+                                        "</div>" +
+                                  "</div>" +
+                            "</li>";
+      }
+
+      content += "</ul>";
+      $('#event-body').html(content);
+    });
+}
+
+function finalizeSelection(time, placeID, name){
+    $('#event-body').html("");
+    placeID = decodeURI(placeID);
+    name = decodeURI(name);
+
+    var schedule_id = document.getElementById("schedule_id").innerHTML;
+    console.log(time);
+    console.log(placeID);
+    console.log(schedule_id);
+    console.log(name);
+
+    $.get({
+        dataType: "json",
+        url: "./actions/storeSelection.php/?time=" + time + "&place_id=" + placeID+ "&schedule_id=" + schedule_id + "&name=" + name,
+    }).done(function(data){
+      location.reload();
+    });
+}
