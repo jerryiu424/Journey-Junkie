@@ -115,22 +115,18 @@ function populateEventListModal(time) {
     content = "<ul class=\"list-group\">";
 
     var type = document.getElementById("chosenCategory").value;
-    console.log(type);
     $('#event-body').html("");
 
     var city = document.getElementById("itineraryHeader").innerHTML;
-    console.log(city);
 
     $.get({
         dataType: "json",
         url: "https://jackbiggin.lib.id/hackwestern@dev/findNearbyLocations/?location=" + city + "&radius=4000&searchType=" + type,
     }).done(function(data){
-      console.log(data);
 
 
       for(var place in data)
       {
-        console.log(data[place]);
         content = content + "<li class=\"list-group-item\" id=\"ChoosenPlace\">" +
                                   "<div class=\"row\">" +
                                         "<div class=\"col-md-3\">" +
@@ -157,15 +153,11 @@ function finalizeSelection(time, placeID, name){
     name = decodeURI(name);
 
     var schedule_id = document.getElementById("schedule_id").innerHTML;
-    console.log(time);
-    console.log(placeID);
-    console.log(schedule_id);
-    console.log(name);
 
     $.get({
         dataType: "json",
         url: "./actions/storeSelection.php/?time=" + time + "&place_id=" + placeID+ "&schedule_id=" + schedule_id + "&name=" + name,
-    }).done(function(data){
-      location.reload();
     });
+
+    location.reload();
 }
